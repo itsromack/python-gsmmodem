@@ -13,7 +13,7 @@ import sys
 
 
 #PORT = '/dev/ttyUSB2'
-PORT = '/dev/tty.usbserial-1411A'
+PORT = '/dev/tty.usbserial-1421A'
 # PORT = '/dev/tty.usbserial'
 BAUDRATE = 115200
 PIN = None # SIM card PIN (if any) 
@@ -40,7 +40,7 @@ def handleSms(sms):
     sms.reply(u'Thank you, we have received your incident report. We will respond immediately, please standby.\nIRIS Framework\nhttp://iris-framework.com')
     print('SMS sent.\n')
 
-modem = GsmModem(PORT, BAUDRATE, smsReceivedCallbackFunc=handleSms, incomingCallCallbackFunc=handleIncomingCall)
+modem = GsmModem(PORT, BAUDRATE, smsReceivedCallbackFunc=handleSms)
 
 def main():
     print('Initializing modem...')
